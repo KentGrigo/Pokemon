@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Kent Grigo - Pokemon</title>
+    <!-- <link rel="shortcut icon" href="../../favicon.png" type="image/x-icon" /> -->
+
+    <script src="settings.js"></script>
+
+    <!-- Roam -->
+    <script src="object/obstacle.js"></script>    
+    <script src="object/delimiter.js"></script>    
+    <script src="object/tree.js"></script>    
+    <script src="object/sign.js"></script>    
+    <script src="object/fence.js"></script>    
+    <script src="object/water.js"></script>    
+    <script src="object/grass.js"></script>    
+    <script src="object/house.js"></script>
+    <script src="object/ledge.js"></script>
+
+    <script src="map/pallet_town.js"></script>
+    <script src="map/route1.js"></script>
+    <script src="map/map1.js"></script>
+    <script src="map.js"></script>
+
+    <!-- Attack -->
+    <script src="attack.js"></script>    
+    <script src="attack/tackle.js"></script>    
+    <script src="attack/quick_attack.js"></script>    
+    <script src="attack/tail_whip.js"></script>    
+    <script src="attack/water_gun.js"></script>    
+
+    <!-- Pokemon -->
+    <script src="pokemon.js"></script>
+    <script src="pokemon/rattata.js"></script>
+    <script src="pokemon/pidgey.js"></script>
+    <script src="pokemon/squirtle.js"></script>
+
+    <!-- Battle -->
+    <script src="battle.js"></script>
+
+    <!-- General -->
+    <script src="player.js"></script>
+    <script src="main.js"></script>
+
+    <script type="text/javascript">
+      function settingsUpdate() {
+        WIDTH  = document.getElementById('width').value * TILE_SIZE;
+        HEIGHT = document.getElementById('height').value * TILE_SIZE;
+        GRAPHICS = document.getElementById('graphics').value;
+        canvas.width = WIDTH;
+        canvas.height = HEIGHT;
+        state = MODE;
+      }
+    </script>
+</head>
+  <body>
+    Width: &nbsp; <input type="text" id="width"  value="23">  <br/>
+    Height:&nbsp; <input type="text" id="height" value="35"> <br/>
+    Graphics:&nbsp;&nbsp;
+    <select id="graphics">
+      <option value="true">On</option>
+      <option value="false">Off</option>
+    </select>
+    <br/>
+    <input type="button" value="Update" onclick="settingsUpdate();"/> <br/>
+    <br/>
+  </body>
+</html>
