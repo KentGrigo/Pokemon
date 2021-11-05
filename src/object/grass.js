@@ -5,7 +5,7 @@ function Grass(x, y, width, height) {
     this.height = height * TILE_SIZE;
 
     this.img = new Image();
-    this.img.src = "images/grass.png";
+    this.img.src = "images/object/grass.png";
 }
 
 Grass.prototype.render = function(playerX, playerY) {

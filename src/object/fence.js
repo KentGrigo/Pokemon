@@ -1,7 +1,7 @@
 function Fence(x, y, width, height) {
     this.obstacle = new Obstacle(x, y, width, height);
     this.img = new Image();
-    this.img.src = "images/fence.png";
+    this.img.src = "images/object/fence.png";
 }
 
 Fence.prototype.render = function(playerX, playerY) {

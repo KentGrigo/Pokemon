@@ -5,7 +5,7 @@ function Ledge(x, y, width, height) {
     this.height = height * TILE_SIZE;
 
     this.img = new Image();
-    this.img.src = "images/ledge.png";
+    this.img.src = "images/object/ledge.png";
 }
 
 Ledge.prototype.render = function(playerX, playerY) {

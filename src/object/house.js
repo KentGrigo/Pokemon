@@ -11,9 +11,9 @@ function House(x, y, width, height, doorX, doorY) {
     this.doorHeight = 1 * TILE_SIZE;
 
     this.img = new Image();
-    this.img.src = "images/house.png";
+    this.img.src = "images/object/house.png";
     if (this.width == 6 * TILE_SIZE && this.height == 4 * TILE_SIZE)
-        this.img.src = "images/prof-oaks-lab.png";
+        this.img.src = "images/object/prof-oaks-lab.png";
 }
 
 House.prototype.render = function(playerX, playerY) {

@@ -1,7 +1,7 @@
 function Water(x, y, width, height) {
     this.obstacle = new Obstacle(x, y, width, height);
     this.img = new Image();
-    this.img.src = "images/water.png";
+    this.img.src = "images/object/water.png";
 }
 
 Water.prototype.render = function(playerX, playerY) {

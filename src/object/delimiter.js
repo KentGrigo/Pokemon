@@ -1,7 +1,7 @@
 function Delimiter(x, y, width, height) {
     this.obstacle = new Obstacle(x, y, width, height);
     this.img = new Image();
-    this.img.src = "images/delimiter.png";
+    this.img.src = "images/object/delimiter.png";
 }
 
 Delimiter.prototype.render = function(playerX, playerY) {

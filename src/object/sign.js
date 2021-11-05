@@ -1,7 +1,7 @@
 function Sign(x, y, width, height) {
     this.obstacle = new Obstacle(x, y, width, height);
     this.img = new Image();
-    this.img.src = "images/sign.png";
+    this.img.src = "images/object/sign.png";
 }
 
 Sign.prototype.render = function(playerX, playerY) {

@@ -1,7 +1,7 @@
 function Tree(x, y, width, height) {
     this.obstacle = new Obstacle(x, y, width, height);
     this.img = new Image();
-    this.img.src = "images/tree.png";
+    this.img.src = "images/object/tree.png";
 }
 
 Tree.prototype.render = function(playerX, playerY) {

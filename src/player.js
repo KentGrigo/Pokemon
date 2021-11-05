@@ -13,7 +13,7 @@ function Player(x, y) {
     this.justMoved = false;
 
     this.direction = 1;         // down
-    var imgDir = "images/ash-";
+    var imgDir = "images/player/ash-";
     var imgFormat = ".png";
     this.img = new Image();
     this.imgs = [new Image(), new Image(), new Image(), new Image(), new Image(), new Image(), new Image(), new Image()];
