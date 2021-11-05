@@ -22,9 +22,9 @@ function Battle(pokemon1, pokemon2) {
     this.lastMessage = new Date(-this.messageDelay); // to not create a delay in the beginning
 }
 
-Battle.prototype.render = function() {
+Battle.prototype.render = function () {
     context.fillStyle = "#000000";
-    context.font="20px Georgia";
+    context.font = "20px Georgia";
 
     this.pokemon1.renderBack(90, 110);
     this.pokemon2.renderFront(10, 20);
@@ -84,7 +84,7 @@ Battle.prototype.render = function() {
     }
 };
 
-Battle.prototype.update = function() {
+Battle.prototype.update = function () {
     if (this.recentlyReceivedInput()) return;
     if (this.recentlyReceivedMessage()) return;
 
@@ -100,14 +100,14 @@ Battle.prototype.update = function() {
         return;
     }
 
-    for(var key in keysDown) {
+    for (var key in keysDown) {
         var value = Number(key);
-        if      (value==8)  this.back();        // backspace
-        else if (value==13) this.select();      // enter
-        else if (value==37) this.selectLeft();  // left  arrow
-        else if (value==38) this.selectUp();    // up    arrow
-        else if (value==39) this.selectRight(); // right arrow
-        else if (value==40) this.selectDown();  // down  arrow
+        if (value == 8) this.back();        // backspace
+        else if (value == 13) this.select();      // enter
+        else if (value == 37) this.selectLeft();  // left  arrow
+        else if (value == 38) this.selectUp();    // up    arrow
+        else if (value == 39) this.selectRight(); // right arrow
+        else if (value == 40) this.selectDown();  // down  arrow
         if (value == 13 || value == 37 || value == 38 || value == 39 || value == 40) {
             this.lastInput = new Date();
             break;              // No multiple moves
@@ -155,18 +155,18 @@ Battle.prototype.update = function() {
     } else if (this.fleeing) {
         MODE = "Roam";
     }
-    
+
 };
 
-Battle.prototype.hasWon = function() {
+Battle.prototype.hasWon = function () {
     return this.pokemon2.health <= 0;
 }
 
-Battle.prototype.hasLost = function() {
+Battle.prototype.hasLost = function () {
     return this.pokemon1.health <= 0;
 }
 
-Battle.prototype.back = function() {
+Battle.prototype.back = function () {
     if (this.hasChosenAction && this.action === "RUN") {
         this.select();
     } else if (this.hasChosenAction) {
@@ -174,18 +174,18 @@ Battle.prototype.back = function() {
     }
 }
 
-Battle.prototype.selectLeft = function() {
+Battle.prototype.selectLeft = function () {
     if (this.hasChosenAction || this.enteringBattle) return;
     if (this.action === "PKMN") this.action = "FIGHT";
-    if (this.action === "RUN")  this.action = "ITEM";
+    if (this.action === "RUN") this.action = "ITEM";
 };
 
-Battle.prototype.selectUp = function() {
+Battle.prototype.selectUp = function () {
     if (this.enteringBattle) return;
 
     if (!this.hasChosenAction) {
         if (this.action === "ITEM") this.action = "FIGHT";
-        if (this.action === "RUN")  this.action = "PKMN";
+        if (this.action === "RUN") this.action = "PKMN";
     } else if (this.action === "FIGHT") {
         if (1 < this.pokemon1AttackNumber) {
             this.pokemon1AttackNumber--;
@@ -195,18 +195,18 @@ Battle.prototype.selectUp = function() {
     }
 };
 
-Battle.prototype.selectRight = function() {
+Battle.prototype.selectRight = function () {
     if (this.hasChosenAction || this.enteringBattle) return;
     if (this.action === "FIGHT") this.action = "PKMN";
-    if (this.action === "ITEM")  this.action = "RUN";
+    if (this.action === "ITEM") this.action = "RUN";
 };
 
-Battle.prototype.selectDown = function() {
+Battle.prototype.selectDown = function () {
     if (this.enteringBattle) return;
 
     if (!this.hasChosenAction) {
         if (this.action === "FIGHT") this.action = "ITEM";
-        if (this.action === "PKMN")  this.action = "RUN";
+        if (this.action === "PKMN") this.action = "RUN";
     } else if (this.action === "FIGHT") {
         if (this.pokemon1AttackNumber < this.pokemon1.amountOfAttacks) {
             this.pokemon1AttackNumber++;
@@ -216,7 +216,7 @@ Battle.prototype.selectDown = function() {
     }
 };
 
-Battle.prototype.select = function() {
+Battle.prototype.select = function () {
     if (this.enteringBattle) {
         this.enteringBattle = false;
     } else if (this.faintMessage) {
@@ -234,14 +234,14 @@ Battle.prototype.select = function() {
     }
 };
 
-Battle.prototype.drawCursor = function() {
+Battle.prototype.drawCursor = function () {
     var x, y;
 
     if (!this.hasChosenAction) {
-        if      (this.action === "FIGHT") { x =  75; y = 230; }
-        else if (this.action === "PKMN")  { x = 155; y = 230; }
-        else if (this.action === "ITEM")  { x =  75; y = 270; }
-        else if (this.action === "RUN")   { x = 155; y = 270; }
+        if (this.action === "FIGHT") { x = 75; y = 230; }
+        else if (this.action === "PKMN") { x = 155; y = 230; }
+        else if (this.action === "ITEM") { x = 75; y = 270; }
+        else if (this.action === "RUN") { x = 155; y = 270; }
     } else if (this.action === "FIGHT") {
         x = 75;
         y = this.pokemon1AttackNumber * 20 + 200;
@@ -255,5 +255,5 @@ Battle.prototype.drawCursor = function() {
     context.fill();
 };
 
-Battle.prototype.recentlyReceivedInput = function() { return (new Date() - this.lastInput) < this.inputDelay; }
-Battle.prototype.recentlyReceivedMessage = function() { return (new Date() - this.lastMessage) < this.messageDelay; }
+Battle.prototype.recentlyReceivedInput = function () { return (new Date() - this.lastInput) < this.inputDelay; }
+Battle.prototype.recentlyReceivedMessage = function () { return (new Date() - this.lastMessage) < this.messageDelay; }

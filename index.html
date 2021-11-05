@@ -1,68 +1,71 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Kent Grigo - Pokemon</title>
-    <link rel="icon" type="image/svg" href="images/favicon.svg"/>
 
-    <script src="src/settings.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Kent Grigo - Pokemon</title>
+  <link rel="icon" type="image/svg" href="images/favicon.svg" />
 
-    <!-- Roam -->
-    <script src="src/object/obstacle.js"></script>
-    <script src="src/object/delimiter.js"></script>
-    <script src="src/object/tree.js"></script>
-    <script src="src/object/sign.js"></script>
-    <script src="src/object/fence.js"></script>
-    <script src="src/object/water.js"></script>
-    <script src="src/object/grass.js"></script>
-    <script src="src/object/house.js"></script>
-    <script src="src/object/ledge.js"></script>
+  <script src="src/settings.js"></script>
 
-    <script src="src/map/pallet_town.js"></script>
-    <script src="src/map/route1.js"></script>
-    <script src="src/map/map1.js"></script>
-    <script src="src/map.js"></script>
+  <!-- Roam -->
+  <script src="src/object/obstacle.js"></script>
+  <script src="src/object/delimiter.js"></script>
+  <script src="src/object/tree.js"></script>
+  <script src="src/object/sign.js"></script>
+  <script src="src/object/fence.js"></script>
+  <script src="src/object/water.js"></script>
+  <script src="src/object/grass.js"></script>
+  <script src="src/object/house.js"></script>
+  <script src="src/object/ledge.js"></script>
 
-    <!-- Attack -->
-    <script src="src/attack.js"></script>
-    <script src="src/attack/tackle.js"></script>
-    <script src="src/attack/quick_attack.js"></script>
-    <script src="src/attack/tail_whip.js"></script>
-    <script src="src/attack/water_gun.js"></script>
+  <script src="src/map/pallet_town.js"></script>
+  <script src="src/map/route1.js"></script>
+  <script src="src/map/map1.js"></script>
+  <script src="src/map.js"></script>
 
-    <!-- Pokemon -->
-    <script src="src/pokemon.js"></script>
-    <script src="src/pokemon/rattata.js"></script>
-    <script src="src/pokemon/pidgey.js"></script>
-    <script src="src/pokemon/squirtle.js"></script>
+  <!-- Attack -->
+  <script src="src/attack.js"></script>
+  <script src="src/attack/tackle.js"></script>
+  <script src="src/attack/quick_attack.js"></script>
+  <script src="src/attack/tail_whip.js"></script>
+  <script src="src/attack/water_gun.js"></script>
 
-    <!-- Battle -->
-    <script src="src/battle.js"></script>
+  <!-- Pokemon -->
+  <script src="src/pokemon.js"></script>
+  <script src="src/pokemon/rattata.js"></script>
+  <script src="src/pokemon/pidgey.js"></script>
+  <script src="src/pokemon/squirtle.js"></script>
 
-    <!-- General -->
-    <script src="src/player.js"></script>
-    <script src="src/main.js"></script>
+  <!-- Battle -->
+  <script src="src/battle.js"></script>
 
-    <script type="text/javascript">
-      function settingsUpdate() {
-        WIDTH  = document.getElementById('width').value * TILE_SIZE;
-        HEIGHT = document.getElementById('height').value * TILE_SIZE;
-        GRAPHICS = document.getElementById('graphics').value;
-        canvas.width = WIDTH;
-        canvas.height = HEIGHT;
-        state = MODE;
-      }
-    </script>
+  <!-- General -->
+  <script src="src/player.js"></script>
+  <script src="src/main.js"></script>
+
+  <script type="text/javascript">
+    function settingsUpdate() {
+      WIDTH = document.getElementById('width').value * TILE_SIZE;
+      HEIGHT = document.getElementById('height').value * TILE_SIZE;
+      GRAPHICS = document.getElementById('graphics').value;
+      canvas.width = WIDTH;
+      canvas.height = HEIGHT;
+      state = MODE;
+    }
+  </script>
 </head>
-  <body>
-    Width: &nbsp; <input type="text" id="width"  value="23">  <br/>
-    Height:&nbsp; <input type="text" id="height" value="35"> <br/>
-    Graphics:&nbsp;&nbsp;
-    <select id="graphics">
-      <option value="true">On</option>
-      <option value="false">Off</option>
-    </select>
-    <br/>
-    <input type="button" value="Update" onclick="settingsUpdate();"/> <br/>
-    <br/>
-  </body>
+
+<body>
+  Width: &nbsp; <input type="text" id="width" value="23"> <br />
+  Height:&nbsp; <input type="text" id="height" value="35"> <br />
+  Graphics:&nbsp;&nbsp;
+  <select id="graphics">
+    <option value="true">On</option>
+    <option value="false">Off</option>
+  </select>
+  <br />
+  <input type="button" value="Update" onclick="settingsUpdate();" /> <br />
+  <br />
+</body>
+
 </html>

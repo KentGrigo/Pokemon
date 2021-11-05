@@ -2,12 +2,12 @@ function House(x, y, width, height, doorX, doorY) {
     // House
     this.x = x * TILE_SIZE;
     this.y = y * TILE_SIZE;
-    this.width  = width * TILE_SIZE;
+    this.width = width * TILE_SIZE;
     this.height = height * TILE_SIZE;
     // Door
     this.doorX = doorX * TILE_SIZE + this.x;
     this.doorY = doorY * TILE_SIZE + this.y;
-    this.doorWidth  = 1 * TILE_SIZE;
+    this.doorWidth = 1 * TILE_SIZE;
     this.doorHeight = 1 * TILE_SIZE;
 
     this.img = new Image();
@@ -16,7 +16,7 @@ function House(x, y, width, height, doorX, doorY) {
         this.img.src = "images/object/prof-oaks-lab.png";
 }
 
-House.prototype.render = function(playerX, playerY) {
+House.prototype.render = function (playerX, playerY) {
     if (GRAPHICS === "false") {
         context.fillStyle = "#A73B00";
         context.fillRect(this.x - playerX + WIDTH / 2, this.y - playerY + HEIGHT / 2, this.width, this.height);
@@ -27,16 +27,16 @@ House.prototype.render = function(playerX, playerY) {
     }
 }
 
-House.prototype.update = function() {
+House.prototype.update = function () {
 }
 
-House.prototype.collision = function(playerX, playerY) {
-    left  = playerX < this.x;
-    right = this.x + this.width - 1  < playerX;
+House.prototype.collision = function (playerX, playerY) {
+    left = playerX < this.x;
+    right = this.x + this.width - 1 < playerX;
     above = playerY < this.y;
     below = this.y + this.height - 1 < playerY;
 
     door = (playerX == this.doorX) && (playerY == this.doorY);
 
-    return ! (left || right || above || below || door);
+    return !(left || right || above || below || door);
 }

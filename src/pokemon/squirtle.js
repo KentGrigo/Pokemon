@@ -21,7 +21,7 @@ function Squirtle(level) {
     this.setAttacks();
 }
 
-Squirtle.prototype.setAttacks = function() {
+Squirtle.prototype.setAttacks = function () {
     if (1 <= this.level) {
         this.attack1 = new Attack(new Tackle());
     }

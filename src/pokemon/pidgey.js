@@ -21,7 +21,7 @@ function Pidgey(level) {
     this.setAttacks();
 }
 
-Pidgey.prototype.setAttacks = function() {
+Pidgey.prototype.setAttacks = function () {
     if (1 <= this.level) {
         this.attack1 = new Attack(new Tackle());
     }

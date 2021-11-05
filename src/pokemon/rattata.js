@@ -21,7 +21,7 @@ function Rattata(level) {
     this.setAttacks();
 }
 
-Rattata.prototype.setAttacks = function() {
+Rattata.prototype.setAttacks = function () {
     if (1 <= this.level) {
         this.attack1 = new Attack(new Tackle());
         this.attack2 = new Attack(new Tail_Whip());

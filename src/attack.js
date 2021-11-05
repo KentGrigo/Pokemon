@@ -14,12 +14,12 @@ function Attack(attack) {
 }
 
 // http://bulbapedia.bulbagarden.net/wiki/Damage#Damage_formula
-Attack.prototype.attack = function(attacker_level, attacker_base, target_defense, modifier) {
+Attack.prototype.attack = function (attacker_level, attacker_base, target_defense, modifier) {
     if (this.PP == 0) return;
     this.PP--;
 
     var damage;
-    damage  = (2 * attacker_level + 10) / 250;
+    damage = (2 * attacker_level + 10) / 250;
     damage *= this.power / target_defense;
     damage *= attacker_base;
     damage += 2;
@@ -27,6 +27,6 @@ Attack.prototype.attack = function(attacker_level, attacker_base, target_defense
     return Math.floor(damage);
 }
 
-Attack.prototype.isQuick = function() {
+Attack.prototype.isQuick = function () {
     return this.priority == 1;
 }

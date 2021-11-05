@@ -1,9 +1,9 @@
 function Map(map) {
     this.map = map;
-    this.encounterRate = 25; 
+    this.encounterRate = 25;
 }
 
-Map.prototype.render = function(playerX, playerY) {
+Map.prototype.render = function (playerX, playerY) {
     for (var i = 0; i < this.map.houses.length; i++) {
         this.map.houses[i].render(playerX, playerY);
     }
@@ -18,10 +18,10 @@ Map.prototype.render = function(playerX, playerY) {
     }
 }
 
-Map.prototype.update = function() {
+Map.prototype.update = function () {
 }
 
-Map.prototype.collision = function(playerX, playerY, prevPlayerX, prevPlayerY) {
+Map.prototype.collision = function (playerX, playerY, prevPlayerX, prevPlayerY) {
     for (var i = 0; i < this.map.houses.length; i++) {
         house = this.map.houses[i];
         if (house.collision(playerX, playerY)) return [prevPlayerX, prevPlayerY];
@@ -33,16 +33,16 @@ Map.prototype.collision = function(playerX, playerY, prevPlayerX, prevPlayerY) {
     for (var i = 0; i < this.map.ledges.length; i++) {
         ledge = this.map.ledges[i];
         var pos = ledge.collision(playerX, playerY, prevPlayerX, prevPlayerY);
-        if      (pos[0] == prevPlayerX && pos[1] == prevPlayerY) return [prevPlayerX, prevPlayerY];
-        else if (pos[0] != playerX     || pos[1] != playerY)     return pos;
+        if (pos[0] == prevPlayerX && pos[1] == prevPlayerY) return [prevPlayerX, prevPlayerY];
+        else if (pos[0] != playerX || pos[1] != playerY) return pos;
     }
 
     return [playerX, playerY];
 }
 
-Map.prototype.readSign = function(){}
+Map.prototype.readSign = function () { }
 
-Map.prototype.onGrass = function(playerX, playerY) {
+Map.prototype.onGrass = function (playerX, playerY) {
     for (var i = 0; i < this.map.grass.length; i++) {
         grass = this.map.grass[i];
         if (grass.collision(playerX, playerY)) return true;
@@ -51,11 +51,11 @@ Map.prototype.onGrass = function(playerX, playerY) {
     return false;
 }
 
-Map.prototype.getEncounterRate = function() {
+Map.prototype.getEncounterRate = function () {
     return this.encounterRate;
 }
 
-Map.prototype.getPokemon = function() {
+Map.prototype.getPokemon = function () {
     var random = Math.random() * 100;
     var level;
     if (random < 50) {
@@ -69,7 +69,7 @@ Map.prototype.getPokemon = function() {
     }
 }
 
-Map.prototype.offset = function(x, y) {
+Map.prototype.offset = function (x, y) {
     for (var i = 0; i < this.map.houses.length; i++) {
         this.map.houses[i].x += x * TILE_SIZE;
         this.map.houses[i].y += y * TILE_SIZE;
