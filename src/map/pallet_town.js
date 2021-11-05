@@ -3,10 +3,10 @@ function PalletTown() {
 		new House(4, 3, 4, 3, 1, 2),
 		new House(12, 3, 4, 3, 1, 2),
 		new House(10, 8, 6, 4, 2, 3)
-	];
+	]
 	this.grass = [
 		new Grass(10, 0, 2, 2)
-	];
+	]
 	this.obstacles = [
 		// Delimiters
 		new Delimiter(0, 1, 1, 17),
@@ -35,7 +35,7 @@ function PalletTown() {
 
 		// Water
 		new Water(4, 14, 4, 5)
-	];
+	]
 	this.ledges = [
-	];
+	]
 }

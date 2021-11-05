@@ -45,12 +45,12 @@
 
   <script type="text/javascript">
     function settingsUpdate() {
-      WIDTH = document.getElementById('width').value * TILE_SIZE;
-      HEIGHT = document.getElementById('height').value * TILE_SIZE;
-      GRAPHICS = document.getElementById('graphics').value;
-      canvas.width = WIDTH;
-      canvas.height = HEIGHT;
-      state = MODE;
+      WIDTH = document.getElementById('width').value * TILE_SIZE
+      HEIGHT = document.getElementById('height').value * TILE_SIZE
+      GRAPHICS = document.getElementById('graphics').value
+      canvas.width = WIDTH
+      canvas.height = HEIGHT
+      state = MODE
     }
   </script>
 </head>
@@ -64,7 +64,7 @@
     <option value="false">Off</option>
   </select>
   <br />
-  <input type="button" value="Update" onclick="settingsUpdate();" /> <br />
+  <input type="button" value="Update" onclick="settingsUpdate()" /> <br />
   <br />
 </body>
 

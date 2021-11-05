@@ -1,6 +1,6 @@
 function Route1() {
 	this.houses = [
-	];
+	]
 	this.grass = [
 		new Grass(7, 32, 2, 4),
 		new Grass(1, 30, 4, 2),
@@ -10,7 +10,7 @@ function Route1() {
 		new Grass(9, 22, 4, 4),
 		new Grass(11, 12, 4, 4),
 		new Grass(7, 6, 8, 4)
-	];
+	]
 	this.obstacles = [
 		// Delimiters
 		new Delimiter(0, 0, 1, 6),
@@ -40,7 +40,7 @@ function Route1() {
 		new Sign(6, 27, 1, 1)
 
 		// Fences
-	];
+	]
 	this.ledges = [
 		new Ledge(1, 27, 2, 1),
 		new Ledge(7, 27, 8, 1),
@@ -52,5 +52,5 @@ function Route1() {
 		new Ledge(1, 9, 5, 1),
 		new Ledge(1, 5, 5, 1),
 		new Ledge(7, 5, 4, 1)
-	];
+	]
 }
