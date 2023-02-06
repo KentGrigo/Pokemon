@@ -100,8 +100,6 @@ Player.prototype.move = function (map, x, y) {
     this.xOld = this.x
     this.yOld = this.y
 
-    // this.x += x * TILE_SIZE
-    // this.y += y * TILE_SIZE
     this.xNew += x * TILE_SIZE
     this.yNew += y * TILE_SIZE
     this.lastMove = new Date()
@@ -109,6 +107,4 @@ Player.prototype.move = function (map, x, y) {
     var pos = map.collision(this.xNew, this.yNew, this.xOld, this.yOld)
     this.xNew = pos[0]
     this.yNew = pos[1]
-    // this.x = pos[0]
-    // this.y = pos[1]
 }
