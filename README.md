@@ -4,7 +4,7 @@
 This is my implementation of Pokemon Red/Blue.
 
 ## How to run?
-Open `index.html`.
+Open `index.html` or go here: https://kentgrigo.github.io/Pokemon/
 
 ## Status
 Currently, the game supports walking around in Pallet Town and Route 1.
